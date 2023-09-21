@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Từ điển</title>
+</head>
+
+<body>
+    <h1>Từ điển</h1>
+
+    <label for="bcc">Chọn từ:</label>
+    <select name="bcc" id="bcc"></select>
+    <button onclick="show()">Tra cứu</button>
+    <br>
+    <div class="show">
+        Kết quả: <span id="num"></span>
+    </div>
+    <script>
+        const englishWords = [
+            "Hello",
+            "I",
+            "am",
+            "student",
+            "Bye"
+        ];
+        const vnWords = [
+            "Xin chào",
+            "tôi",
+            "là",
+            "học sinh",
+            "tạm biệt"
+        ];
+
+        const selectElement = document.getElementById("bcc");
+        for (let i = 0; i < englishWords.length; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.text = englishWords[i];
+            selectElement.appendChild(option);
+        }
+
+        function show() {
+            var sbcc = parseInt(document.getElementById("bcc").value);
+            document.getElementById("num").innerHTML = vnWords[sbcc];
+        }
+    </script>
+</body>
+
+</html>

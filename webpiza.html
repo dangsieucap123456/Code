@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .banner {
+            position: relative;
+        }
+
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: flex;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .dlvn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .dashed-divider {
+            border-top: 2.5px dashed blue;
+            margin: 20px 0;
+        }
+
+        .khung {
+            border: black solid 1px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .rounded-circle {
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        /* Optional styles for centering the image */
+        .rounded-circle img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .card-group {
+            display: flex;
+            justify-content: space-between;
+            /* Cách đều các card */
+            align-items: flex-start;
+            /* Căn đỉnh các card */
+        }
+
+        .card {
+            /* background-color: moccasin; */
+            flex: 1;
+            padding: 10px;
+            margin: 15px;
+            /* border: none; */
+            text-align: center;
+        }
+
+        .rounded-circle {
+            /* border-radius: 50%; */
+            overflow: hidden;
+            width: 100%;
+            /* width: 150px;
+            height: 150px; */
+            margin: 0 auto 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .textngu {
+            text-align: right;
+            margin-left: 70%
+        }
+
+        .center-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .right-text {
+            display: flex;
+            /* align-items: right; */
+            justify-content: right;
+            /* text-align: right; */
+        }
+
+        .content {
+            /* transform: translate(0, -50%); */
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 70%;
+            padding: 20px;
+            /* border: 1px solid #ccc;
+            border-radius: 10px; */
+        }
+
+        .title {
+            color: #007BFF;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .content p {
+            text-align: justify;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: flex-end;
+            border: none;
+            margin-top: 10px;
+        }
+
+
+        .container {
+            width: 1200px;
+            /* background-color: moccasin; */
+            font-size: 18px;
+        }
+
+        .bannerKM {
+            padding-top: 10px;
+            background-color: lightslategrey;
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center ">
+            <header>
+                <div class="logo">
+                    <img src="hinh/logo.png" alt="">
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">Khuyến mãi</a></li>
+                        <li><a href="#">Pizza</a></li>
+                        <li><a href="#">Món ăn kèm</a></li>
+                        <li><a href="#">Giải khát</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="hinh/banner-01.jpg" class="d-block w-100" alt="Slide 1">
+                            <div class="carousel-caption">&#8226;</div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="hinh/banner-02.jpg" class="d-block w-100" alt="Slide 2">
+                            <div class="carousel-caption">&#8226;</div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="hinh/banner-03.jpg" class="d-block w-100" alt="Slide 3">
+                            <div class="carousel-caption">&#8226;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="font-weight-bold text-primary center-text title mt-3">
+                PIZZA
+            </span>
+            <div class="card-group">
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/pizza-pho.png" alt="">
+                    </div>
+                    <div class="card-title">
+                        PIZZA PHỞ
+                    </div>
+                    <div class="card-footer"
+                        style="width:200px;height:50px;text-align:center;margin:auto;display:flex;align-content: center;align-items:center;justify-content: center;">
+                        <a href="#" class="btn btn-primary read-more" data-toggle="collapse" data-target="#details1">Chi
+                            tiết</a>
+                    </div>
+                    <div id="details1" class="collapse">
+                        <div class="card-body">
+                            Pizza chuẩn Mỹ, đậm vị quốc dân với thịt bò, bò viên, sốt vị phở, rau ngò gai, rau quế, hành
+                            tây, phô mai Mozzarella
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/pizza-cheese.png" alt="">
+                    </div>
+                    <div class="card-title">
+                        PIZZA PHÔ MAI
+                    </div>
+                    <div class="card-footer"
+                        style="width:200px;height:50px;text-align:center;margin:auto;display:flex;align-content: center;align-items:center;justify-content: center;">
+                        <a href="#" class="btn btn-primary read-more" data-toggle="collapse" data-target="#details2">Chi
+                            tiết</a>
+                    </div>
+                    <div id="details2" class="collapse">
+                        <div class="card-body">
+                            Thử ngay một miếng là tận hưởng trọn vị thơm béo của phô mai Mozzarella nhập khẩu
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/pizza-sea.png" alt="">
+                    </div>
+                    <div class="card-title">
+                        PIZZAMIN SEA
+                    </div>
+                    <div class="card-footer"
+                        style="width:200px;height:50px;text-align:center;margin:auto;display:flex;align-content: center;align-items:center;justify-content: center;">
+                        <a href="#" class="btn btn-primary read-more" data-toggle="collapse" data-target="#details3">Chi
+                            tiết</a>
+                    </div>
+                    <div id="details3" class="collapse">
+                        <div class="card-body">
+                            Bữa tiệc vị giác mùa hè mang lại sự sảng khoái từ Sốt tiêu đen, Tôm, Mực, Thơm, 2 tầng Phô
+                            mai Mozzarella & Cheddar
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <span class="font-weight-bold text-primary center-text title mt-3">
+                THÔNG TIN KHUYẾN MÃI
+            </span>
+            <div class="row bannerKM">
+                <div class="col-md-4">
+                    <img src="hinh/promo1.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8" style="color: white; padding: 10px;">
+                    <b> MUA 1 TẶNG 1 - THỨ 7 & CHỦ NHẬT </b>
+                    <br>
+                    <div style="font-size: 14px; color: white;">
+                        <ul>
+                            <li>
+                                Ưu đãi: Mua 1 bánh Pizza 9" / 12" kèm Nước uống bất kỳ sẽ được tặng 1 bánh Pizza cùng
+                                cỡ.
+                            </li>
+                            <li>
+                                Áp dụng hình thức dùng tại nhà hàng hoặc mang về
+                            </li>
+                            <li>
+                                Hãy đặt online trước để nhận hàng nhanh chóng tại cửa hàng
+                            </li>
+                            <li>
+                                Giao hàng miễn phí
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-primary text-center text-lg-start m-2">
+                <div style="padding:20px;display: flex;">
+                    <div>
+                        <p style="font-weight:bold">Hệ thống cửa hàng</p>
+                        <p>74 Minh Phung P.5 Q.6</p>
+                        <p>348-350 Ten Lua P.Binh Tri Dong B Q.Binh Tan</p>
+                    </div>
+                    <div>
+                        <p style="font-weight:bold">Liên Hệ</p>
+                        <p>Điện thoại: (028) 7308 3377</p>
+                        <p>Hotline đặt hàng: 19006099</p>
+                    </div>
+                    <div>
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </footer>
+        </div>
+</body>
+
+</html>

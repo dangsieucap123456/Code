@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var h = prompt("Chiều cao: ");
+        var w = prompt("Cân nặng: ");
+        var bmi = w / (h * h)
+        if (bmi < 18.5)
+            document.write("thiếu cân");
+        else if (bmi >= 18.5 && bmi <= 24.99)
+            document.write("bình thường");
+        else if (bmi >= 25 && bmi < 29.99)
+            document.write("thừa cân");
+        else
+            document.write("béo phì");0
+
+
+    </script>
+</body>
+
+</html>

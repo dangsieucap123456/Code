@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hiển thị, Sắp xếp và Tìm Phần Tử Mảng</title>
+</head>
+<body>
+    <h1>Hiển thị, Sắp xếp và Tìm Phần Tử Mảng</h1>
+
+    <label for="elementCount">Nhập số phần tử của mảng:</label>
+    <input type="number" id="elementCount">
+    <button onclick="getArrayElements()">Nhập mảng</button>
+
+    <button onclick="displayArray()">Hiển thị Mảng</button>
+    <button onclick="sortArray()">Sắp xếp</button>
+
+    <label for="searchElement">Tìm phần tử:</label>
+    <input type="number" id="searchElement">
+    <button onclick="searchElement()">Tìm</button>
+
+    <div id="output">
+        <h2>Kết quả:</h2>
+        <p id="displayedArray"></p>
+        <p id="maxMinValues"></p>
+        <p id="searchResult"></p>
+    </div>
+
+    <script>
+        let elements = [];
+
+        function getArrayElements() {
+            const elementCount = parseInt(document.getElementById("elementCount").value);
+            elements = [];
+
+            for (let i = 0; i < elementCount; i++) {
+                const element = prompt(`Nhập giá trị cho phần tử thứ ${i + 1}:`);
+                if (element !== null) {
+                    elements.push(parseInt(element));
+                } else {
+                    alert("Nhập không hợp lệ. Vui lòng nhập lại.");
+                    i--;
+                }
+            }
+        }
+
+        function displayArray() {
+            if (elements.length === 0) {
+                alert("Vui lòng nhập mảng trước khi hiển thị.");
+                return;
+            }
+
+            let displayed = "Danh sách phần tử trong mảng:<br>";
+            for (let i = 0; i < elements.length; i++) {
+                displayed += `a[${i}] = ${elements[i]}` +  "<br>";
+
+            }
+
+            document.getElementById("displayedArray").innerHTML = displayed;
+        }
+
+        function sortArray() {
+            if (elements.length === 0) {
+                alert("Vui lòng nhập mảng trước khi sắp xếp.");
+                return;
+            }
+
+            elements.sort(function (a, b) {
+                return a - b;
+            });
+
+            const max = elements[elements.length - 1];
+            const min = elements[0];
+
+            document.getElementById("maxMinValues").innerHTML = `Giá trị lớn nhất: ${max}<br>Giá trị nhỏ nhất: ${min}`;
+            
+            alert("Mảng đã được sắp xếp.");
+
+            displayArray();
+        }
+
+        function searchElement() {
+            if (elements.length === 0) {
+                alert("Vui lòng nhập mảng trước khi tìm kiếm.");
+                return;
+            }
+
+            const searchValue = parseInt(document.getElementById("searchElement").value);
+            const foundIndex = elements.indexOf(searchValue);
+
+            if (foundIndex !== -1) {
+                document.getElementById("searchResult").innerHTML = `Phần tử ${searchValue} xuất hiện tại vị trí a[${foundIndex}].`;
+            } else {
+                document.getElementById("searchResult").innerHTML = `Phần tử ${searchValue} không xuất hiện trong mảng.`;
+            }
+        }
+    </script>
+</body>
+</html>

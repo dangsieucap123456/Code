@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hiển thị bảng cửu chương</title>
+</head>
+<body>
+    <h1>Hiển thị bảng cửu chương</h1>
+
+    <label for="bcc">Chọn bảng cửu chương:</label>
+    <select name="bcc" id="bcc">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button onclick="show()">Xem</button>
+    <br>
+    <div class="show">
+        Bảng cửu chương: <span id="num"></span>
+        <br>
+        <div style="margin-left: 120px;" id="bcnShow">
+
+        </div>
+    </div>
+    <script>
+        function show()
+        {
+            var sbcc = parseInt(document.getElementById("bcc").value);
+            document.getElementById("num").innerHTML = sbcc;
+            var showinfor = "";
+            for (var i = 1; i <= 10; i++)
+            {
+                showinfor += sbcc + "x" + i + "=" + sbcc * i + "<br>";
+            }
+            document.getElementById("bcnShow").innerHTML = showinfor;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <style>
+        .banner {
+            position: relative;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .dlvn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .dashed-divider {
+            border-top: 2.5px dashed blue;
+            margin: 20px 0;
+        }
+
+        .khung {
+            border: black solid 1px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .rounded-circle {
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        /* Optional styles for centering the image */
+        .rounded-circle img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .card-group {
+            display: flex;
+            justify-content: space-between;
+            /* Cách đều các card */
+            align-items: flex-start;
+            /* Căn đỉnh các card */
+        }
+
+        .card {
+            background-color: moccasin;
+            flex: 1;
+            padding: 15px;
+            border: none;
+            text-align: center;
+        }
+
+        .rounded-circle {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .textngu {
+            text-align: right;
+            margin-left: 70%
+        }
+
+        .center-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .right-text {
+            display: flex;
+            /* align-items: right; */
+            justify-content: right;
+            /* text-align: right; */
+        }
+
+        .content {
+            /* transform: translate(0, -50%); */
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 70%;
+            padding: 20px;
+            /* border: 1px solid #ccc;
+            border-radius: 10px; */
+        }
+
+        .title {
+            color: #007BFF;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .content p {
+            text-align: justify;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: flex-end;
+            border: none;
+            margin-top: 10px;
+        }
+
+
+        .container {
+            width: 1200px;
+            background-color: moccasin;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="hinh/banner_vungtau.jpg" alt="">
+            <span class="dlvn">
+                Du Lịch Việt Nam
+            </span>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Danh thắng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cẩm nang </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Việt Nam </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Thế giới </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Đặt tour </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <section>
+            <hr>
+            <span class="font-weight-bold text-primary title">
+                TRẢI NGHIỆM
+            </span>
+            <div class="dashed-divider"></div>
+
+            <div class="card-group">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/cho-ben-thanh.jpg" alt="">
+                    </div>
+                    <div class="card-title">10 điều tuyệt vời nhất chỉ tìm thấy ở Sài Gòn</div>
+                    <div class="card-content">
+                        Dù có đi đâu bạn cũng phải công nhận rằng Sài Gòn là một trong những điểm đến hấp dẫn nhất...
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Xem thêm...</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/thu-ha-noi.jpg" alt="">
+                    </div>
+                    <div class="card-title">Tháng tư về lãng đãng khúc giao mùa Hà Nội</div>
+                    <div class="card-content">
+                        Tháng 4 về Hà Nội hát khúc giao mùa thật trong trẻo chắc chắn sẽ là thời khắc lãng mạn của
+                        mùa...
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Xem thêm...</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/hon-phu-tu.jpg" alt="">
+                    </div>
+                    <div class="card-title">Du lịch Miền Tây đừng bỏ qua Thập cảnh Hà Tiên</div>
+                    <div class="card-content">
+                        Nhắc đến du lịch miền Tây khó có thể bỏ qua Thập cảnh Hà Tiên đã đi vào vần thơ của người Tổng
+                        chấn tài...
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Xem thêm...</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="rounded-circle">
+                        <img src="hinh/chua-thien-mu.jpg" alt="">
+                    </div>
+                    <div class="card-title">Ngược dòng thời gian với quần thể di tích Cố đô Huế</div>
+                    <div class="card-content">
+                        Thành phố Huế với những cảnh sắc thiên nhiên thơ mộng, hữu tình pha một chút cổ kính của các
+                        công trình...
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Xem thêm...</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <span class="font-weight-bold text-primary text-right  right-text title">
+                DANH THẮNG VIỆT NAM
+            </span>
+            <div class="dashed-divider"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="hinh/Danh thang Viet Nam.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8">
+                    <p>Vốn nổi tiếng là một trong những quốc gia Đông Nam Á với rất nhiều thắng cảnh xinh đẹp kéo
+                        dài từ Bắc...</p>
+                    <p>Qủa là đúng khi nói danh lam thắng cảnh đẹp nhất Việt Nam cũng chính là một trong những niềm
+                        tự hào...</p>
+                    <p>Ngoài những hình ảnh quen thuộc, như những ngọn núi chập chùng, cao hùng vĩ, những thác nước
+                        đổ từ trên cao...</p>
+                </div>
+            </div>
+
+
+            <hr>
+            <span class="font-weight-bold text-primary center-text title">
+                ẨM THỰC BỐN PHƯƠNG
+            </span>
+            <div class="dashed-divider"></div>
+            <div class="container">
+            </div>
+            <div class="content">
+                <img src="hinh/nem-nuong-nha-trang.jpg" alt="">
+                <div class="title">Nem nướng Nha Trang là món ăn như thế nào?</div>
+                <p>
+                    Nem nướng Nha Trang là một món ăn dân dã, có nguồn gốc từ huyện Ninh Hòa là một huyện ở phía bắc
+                    của tỉnh Khánh Hòa, cách thành phố biển Khánh Hòa khoảng 30 km. Các quán bán món ăn đường phố
+                    này rất phổ biến trên toàn địa bàn của huyện.
+                    Vì thế các bạn có thể dễ dàng tìm và được thưởng thức món nem nướng làm nên thương hiệu nem
+                    nướng Nha Trang này mà ai đến thành phố biển cũng phải thưởng thức thử qua 1 lần ngay tại những
+                    gánh hàng rong trên đường phố.
+                </p>
+            </div>
+            <div>
+
+            </div>
+        </section>
+        <footer class="bg-primary text-center text-lg-start m-2" style="border-radius: 10px;">
+            <div class="text-center p-3 text-white font-weight-bold ">
+                Công ty du lịch Việt Nam <br>
+                1001 - Quận 6 - Thành phố Hồ Chí Minh
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Từ Điển</title>
+    <script>
+        var dictionaryViAnh = {
+            "mèo": "cat",
+            "chó": "dog",
+            "hoa": "flower",
+            "bàn": "desk",
+            "áo": "shirt",
+            "đá": "stone",
+            "sách": "book",
+            "quả bóng": "ball",
+            "trái cây": "fruit",
+            "xe hơi": "car",
+            "máy tính": "computer",
+            "biển": "ocean",
+            "mặt trời": "sun",
+            "bầu trời": "sky",
+            "núi": "mountain",
+            "rừng": "forest",
+            "bãi biển": "beach",
+            "đám mây": "cloud",
+            "gió": "wind",
+            "mưa": "rain"
+        };
+
+
+        var dictionaryAnhVi = {};
+        for (var key in dictionaryViAnh) {
+            dictionaryAnhVi[dictionaryViAnh[key]] = key;
+        }
+
+        function normalizeString(input) {
+            return input.toLowerCase().replace(/\s+/g, '');
+        }
+
+        function lookupViAnh() {
+            var inputViAnh = normalizeString(document.getElementById("inputViAnh").value);
+            var resultViAnh = document.getElementById("resultViAnh");
+            if (inputViAnh === "") {
+                resultViAnh.innerHTML = "Vui lòng nhập từ vào ô trống.";
+            } else if (dictionaryViAnh[inputViAnh]) {
+                resultViAnh.innerHTML = "Kết quả: " + dictionaryViAnh[inputViAnh];
+            } else {
+                resultViAnh.innerHTML = "Không tìm thấy từ này trong từ điển.";
+            }
+        }
+
+        function lookupAnhVi() {
+            var inputAnhVi = normalizeString(document.getElementById("inputAnhVi").value);
+            var resultAnhVi = document.getElementById("resultAnhVi");
+            if (inputAnhVi === "") {
+                resultAnhVi.innerHTML = "Vui lòng nhập từ vào ô trống.";
+            } else if (dictionaryAnhVi[inputAnhVi]) {
+                resultAnhVi.innerHTML = "Kết quả: " + dictionaryAnhVi[inputAnhVi];
+            } else {
+                resultAnhVi.innerHTML = "Không tìm thấy từ này trong từ điển.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Từ Điển Việt-Anh</h1>
+    <label for="inputViAnh">Nhập từ:</label>
+    <input type="text" id="inputViAnh" placeholder="Nhập từ cần tra cứu">
+    <button onclick="lookupViAnh()">Tra cứu</button>
+    <p id="resultViAnh">Kết quả: </p>
+    <br>
+    <h1>Từ Điển Anh-Việt</h1>
+    <label for="inputAnhVi">Nhập từ:</label>
+    <input type="text" id="inputAnhVi" placeholder="Nhập từ cần tra cứu">
+    <button onclick="lookupAnhVi()">Tra cứu</button>
+    <p id="resultAnhVi">Kết quả: </p>
+</body>
+
+</html>
